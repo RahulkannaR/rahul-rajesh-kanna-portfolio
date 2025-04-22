@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Rahul Rajesh kanna's portfolio">
+    <meta name="author" content="Devcrud">
+    <title>Rahul Portfolio</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + JohnDoe main styles -->
+	<link rel="stylesheet" href="portfolio_latest_css.css">
+
+    <!-- EmailJS UMD SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-A1w0Tq6RTmEydZ4IkDcZ9+XZIZ1T3RijfxT9EYkRZAjhUXkNaEcnZ0xRraUsT3IXcZIQq3JbZ9kkFfLmCKeT6w=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<script>
+  // Initialize EmailJS
+  emailjs.init("5AkwWeT3SPgTa5w7n"); // Replace with your public key
+
+  // Handle form submission
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+    const email = document.getElementById("mail").value;
+    const message = document.getElementById("message").value;
+
+      const form = this;
+      console.log({ name, email, message });
+      emailjs.send("service_mv6lo5q", "template_aei8m3r", {
+        name: form.name.value,
+        email: form.mail.value,
+        message: form.message.value,
+      }).then(() => {
+        alert("Message sent successfully!");
+        form.reset();
+      }).catch((err) => {
+        alert("Error sending message: " + JSON.stringify(err));
+      });
+    });
+  });
+</script>
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <!--<a href="components.html" class="btn btn-primary btn-component" data-spy="affix" data-offset-top="600"><i class="ti-shift-left-alt"></i> Components</a> -->
+    <header class="header">
+        <div class="container">
+            <div class="social-container">
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+                <ul>
+                  <li><a href="https://www.linkedin.com/in/rahul-rajesh-kanna-843b0722b/?originalSubdomain=in" target="_blank" class="confirm-link"><i class="fab fa-linkedin-in icon"></i></a></li>
+                  <li><a href="https://github.com/RahulkannaR" target="_blank" class="confirm-link"><i class="fab fa-github icon"></i></a></li>
+                  <li><a href="https://www.instagram.com/_r_rahul_1754_/#" target="_blank" class="confirm-link"><i class="fab fa-instagram icon"></i></a></li>
+                  <li><a href="#" onclick="showPopup('whatsapp')"><i class="fab fa-whatsapp icon"></i></a></li>
+                  <li><a href="#" onclick="showPopup('phone')"><i class="fas fa-phone icon"></i></a></li>
+                  <li><a href="#" onclick="showPopup('mail')"><i class="fas fa-envelope icon"></i></a></li>
+                </ul>
+              </div>
+              
+            <div class="header-content">
+                <h4 class="header-subtitle" >Hello, I am</h4>
+                <h1 class="header-title">Rahul Rajesh Kanna</h1>
+                <div class="text-animation-wrapper">
+                    <span id="dynamic-text"></span>
+                    <span class="blinking-cursor">|</span>
+                </div>
+                <p> </p>
+                <div class="neon-button-wrapper">
+                    <a href="portfolio_files/Rahul_s_Resume.pdf" target="_blank">
+                      <button class="glow-on-hover" type="button">
+                        <i class="ti-printer pr-2"></i>View Resume
+                      </button>
+                    </a>
+                  </div>                  
+        </div>
+    </header>
+
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+        <div class="container">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#resume" class="nav-link">Resume</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav brand">
+                    
+                    <img src="imgs/rahul-face.jpg" alt="" class="brand-img">
+                    <li class="brand-txt">
+                        <h5 class="brand-title">Rahul Rajesh Kanna</h5>
+                        <div class="brand-subtitle">Electronics Engineer</div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#internship" class="nav-link">Internships</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blog" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item last-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="container-fluid">
+        <div id="about" class="row about-section">
+            <div class="col-lg-4 about-card">
+                <h3 class="font-weight-light">Who am I ?</h3>
+                <span class="line mb-5"></span>
+                <p class="mt-20">Enthusiastic electronics and communication engineering student with a keen eye for real-world challenges. Possessing a strong foundation in coding, I thrive on analyzing complex problems and developing practical solutions. Through rigorous project experience and a deep dive into realtime examples, I aim to bridge the gap between theory and application.</p>
+                <div class="cyber-button">
+                    <a href="portfolio_files/Rahul_s_Resume.pdf">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      Download My Resume
+                    </a>
+                  </div>
+                  
+            </div>
+            <div class="col-lg-4 about-card">
+                <h3 class="font-weight-light">Personal Info</h3>
+                <span class="line mb-5"></span>
+                <ul class="mt40 info list-unstyled">
+                    <li><span>Birthdate</span> : 17/05/2004</li>
+                    <li><span>Email</span> : rahulkannavcet@gmail.com</li>
+                    <li><span>Phone</span> : + (91) 9345814480</li>
+                    <li><span>UG course</span> : BE. ECE (Hons.) specialization in Signal and Image Processing </li>
+                    <li><span>Address</span> :  Bs1 Arun B Block, Vindhiyachal Aprtment, Chandragandhi Nagar, Ponmeni, Bypass Road, Madurai - 16.</li>
+                </ul>
+                <div class="social-container">
+                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+                    <ul>
+                      <li><a href="https://www.linkedin.com/in/rahul-rajesh-kanna-843b0722b/?originalSubdomain=in" target="_blank" class="confirm-link"><i class="fab fa-linkedin-in icon"></i></a></li>
+                      <li><a href="https://github.com/RahulkannaR" target="_blank" class="confirm-link"><i class="fab fa-github icon"></i></a></li>
+                      <li><a href="https://www.instagram.com/_r_rahul_1754_/#" target="_blank" class="confirm-link"><i class="fab fa-instagram icon"></i></a></li>
+                      <li><a href="#" onclick="showPopup('whatsapp')"><i class="fab fa-whatsapp icon"></i></a></li>
+                      <li><a href="#" onclick="showPopup('phone')"><i class="fas fa-phone icon"></i></a></li>
+                      <li><a href="#" onclick="showPopup('mail')"><i class="fas fa-envelope icon"></i></a></li>
+                    </ul>
+                  </div>
+            </div>
+            <div class="col-lg-4 about-card">
+                <h3 class="font-weight-light">My Expertise</h3>
+                <span class="line mb-5"></span>
+            
+                <div class="row">
+                    <!-- Add this in the <head> -->
+                    <div class="col-1 text-danger pt-1"><i class="fas fa-microchip icon-lg"></i></div>
+                    <div class="col-10 ml-auto mr-3">
+                        <h6>VLSI Design</h6>
+                        <p class="subtitle">Hands-on with Verilog, Xilinx Vivado, RTL to GDS flow, and NPTEL-certified in VLSI system design.</p>
+                        <hr>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-1 text-danger pt-1"><i class="fas fa-microchip icon-lg"></i></div>
+                    <div class="col-10 ml-auto mr-3">
+                        <h6>Digital Electronics</h6>
+                        <p class="subtitle">Strong foundation in logic circuits, flip-flops, counters, and digital system design principles.</p>
+                        <hr>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-1 text-danger pt-1"><i class="fas fa-signal icon-lg"></i></div>
+                    <div class="col-10 ml-auto mr-3">
+                        <h6>Analog Electronics</h6>
+                        <p class="subtitle">Skilled in amplifier design, filters, and analog circuit analysis from core coursework and labs.</p>
+                        <hr>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-1 text-danger pt-1"><i class="fas fa-project-diagram icon-lg"></i></div>
+                    <div class="col-10 ml-auto mr-3">
+                        <h6>Signal & Image Processing</h6>
+                        <p class="subtitle">Specialization in SIP with exposure to real-time DSP, MATLAB simulations, and communication systems.</p>
+                        <hr>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-1 text-danger pt-1"><i class="fas fa-brain icon-lg"></i></div>
+                    <div class="col-10 ml-auto mr-3">
+                        <h6>Machine Learning in ECE</h6>
+                        <p class="subtitle">Built LIBESN and CNN-LSTM models for attack detection and environmental prediction using Python.</p>
+                        <hr>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-1 text-danger pt-1"><i class="fas fa-tools icon-lg"></i></div>
+                    <div class="col-10 ml-auto mr-3">
+                        <h6>PCB & Circuit Design</h6>
+                        <p class="subtitle">Practical exposure from internships in CAD, power supply units, and EMC lab experiments.</p>
+                        <hr>
+                    </div>
+                </div>
+            
+            </div>
+            
+        </div>
+    </div>
+
+    <!--Resume Section-->
+    <section class="section" id="resume">
+        <div class="container">
+            <h2 class="mb-5"><span class="text-danger">My</span> Resume</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                       <div class="card-header">
+                            <div class="mt-2">
+                                <h4>Coures</h4>
+                                <span class="line"></span>  
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="title text-danger">NIELIT Calicut</h6>
+                            <P><b>VLSI for Beginners</b></P>
+                            <P class="subtitle">Completed
+                                Apr 2025 [1 Week Course]</P>
+                            <hr>
+                            <h6 class="title text-danger">NPTEL CERTIFICATION</h6>
+                            <P><b>Electronics - Digital VLSI System Design</b></P>
+                            <P class="subtitle">Completed
+                                Jan-Apr 2025 [12 Week Course]</P>
+                            <hr>
+                            <h6 class="title text-danger">NPTEL CERTIFICATION</h6>
+                            <P><b>VLSI Design Flow: RTL to GDS</b></P>
+                            <P class="subtitle">Completed
+                                Jun-Sept 2024 [12 Week Course]</P>
+                            <hr>
+                            <h6 class="title text-danger">COURSERA COURSES</h6>
+                            <P><b>Hardware Description Languages for FPGA Design</b></P>
+                            <P class="subtitle">Completed (Free Course) | Jan 2025</P>
+                            <h6 class="title text-danger">NPTEL CERTIFICATION</h6>
+                            <P><b>Signal Processing Techniques and its Applications</b></P>
+                            <P class="subtitle">Secured - 88% & Elite with Silver
+                                Jan-Apr 2024 [12 Week Course]</P>
+                            <hr>
+                            <h6 class="title text-danger">NPTEL CERTIFICATION</h6>
+                            <P><b>Real Time Digital Signal Processing</b></P>
+                            <P class="subtitle">Secured - 57% & Successfully Completed
+                                Jun-Sept 2023 [12 Week Course]</P>
+                            <hr>
+                            <h6 class="title text-danger">NPTEL CERTIFICATION</h6>
+                            <P><b>Become a Good Matlab Programmer in 30 days</b></P>
+                            <P class="subtitle">Secured - 57% & Successfully Completed
+                                Jan-Mar 2023 [8 Week Course]</P>
+                            <hr>
+                            <h6 class="title text-danger">UDEMY COURSES</h6>
+                            <P><b>Fundamentals of MIMO Wireless Communication</b></P>
+                            <P class="subtitle">Secured - 57% & Successfully Completed
+                                Jan-Mar 2023 [8 Week Course]</P>
+                            <hr>
+                            <h6 class="title text-danger">COURSERA COURSES + Google</h6>
+                            <P><b>Foundation of Cyber Security</b></P>
+                            <P class="subtitle">Grade: 96.17% | October 2023</P>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                       <div class="card-header">
+                            <div class="mt-2">
+                                <h4>Education</h4>
+                                <span class="line"></span>  
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="title text-danger">2021 - Present</h6>
+                            <P>B.E Electronics and Communication Engineering (Hons. Specialization in Signals and Image Processing)</P>
+                            <P class="subtitle">Velammal College of Engineering and Technology. CGPA - 7.7</P>
+                            <div class="custom-btn-container">
+                                <div class="buttons-wrapper">
+                                    <div class="popup-degree-container">
+                                        <a class="click-btn btn-style2" href="#" onclick="openDegreePopup()">Deg. Cert.</a></div>
+                                        <div id="popup-degree" class="popup-degree-overlay">
+                                          <div class="popup-degree-box">
+                                            <span class="popup-degree-close" onclick="closeDegreePopup()">&times;</span>
+                                            <h2>Degree Status</h2>
+                                            <p>I am currently pursuing my Bachelor's degree. It is not yet completed.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    <div>
+                                </div>
+                            </div>
+                            <hr>
+                            <h6 class="title text-danger">2020 - 2021</h6>
+                            <P>Higher Secondary School - Computer Maths domain</P>
+                            <P class="subtitle">CEOA Matriculation Higher Secondary School. Grade - 83.69 %</P>
+                            <div class="custom-btn-container">
+                                <div class="buttons-wrapper">
+                                    <div><a class="click-btn btn-style2" href="portfolio_files/12th marksheet.jpg">Marksheet</a></div>
+                                </div>
+                            </div>
+                            <hr>
+                            <h6 class="title text-danger">2018 - 2019</h6>
+                            <P>Secondary School (SSLC) </P>
+                            <P class="subtitle">CEOA Matriculation Higher Secondary School. Grade - 80.20 %</P>
+                            <div class="custom-btn-container">
+                                <div class="buttons-wrapper">
+                                    <div><a class="click-btn btn-style2" href="portfolio_files/10th marksheet.jpg">Marksheet</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                       <div class="card-header">
+                            <div class="pull-left">
+                                <h4 class="mt-2">Skills</h4>
+                                <span class="line"></span>  
+                            </div>
+                        </div>
+                        <div class="card-body pb-2">
+                            <h6>Python</h6>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <h6>C++ Programming</h6>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <h6>C Programming</h6>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <h6>Object Oriented Programming Language</h6>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <h6>MATLAB</h6>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <h6>Verilog Design (Xilinx Vivado)</h6>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <h6>Pspice</h6>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <h6>HTML & CSS</h6>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                       <div class="card-header">
+                            <div class="pull-left">
+                                <h4 class="mt-2">Languages</h4>
+                                <span class="line"></span>  
+                            </div>
+                        </div>
+                        <div class="card-body pb-2">
+                           <h6>English</h6>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <h6>Tamil</h6>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="internship">
+        <div class="container">
+            <h2 class="mb-5 pb-4"><span class="text-danger">Intern</span>ship</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card mb-5">
+                       <div class="card-header has-icon">
+                            <i class="ti-vector text-danger" aria-hidden="true"></i>
+                        </div>
+                        <div class="card-body px-4 py-3">
+                            <h5 class="mb-3 card-title text-dark">Indian Telecommunication Industry, Bangalore</h5>
+                            <b class="subtitle">10 - 26, August 2023</b>
+                            <P class="subtitle">R&D unit - 3D Printing | Reliability Laboratory Testing | Power Supply Unit| Basics of CAD Software | EVM(Electronic Voting Machine), DMR(DigitalMobile Radio), IRNSS(Indian Regional Navigation Satellite System) |EMC(Electromagnetic Compatibility) Lab | PCB Design | Data Center</P>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card mb-5">
+                       <div class="card-header has-icon">
+                            <i class="ti-write text-danger" aria-hidden="true"></i>
+                        </div>
+                        <div class="card-body px-4 py-3">
+                            <h5 class="mb-3 card-title text-dark">J. K. Fenner (India) pvt limited</h5>
+                            <b class="subtitle">18, July 2023 - 1, August 2023</b>
+                            <P class="subtitle">REC & Poly V</P>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card mb-5">
+                       <div class="card-header has-icon">
+                            <i class="ti-package text-danger" aria-hidden="true"></i>
+                        </div>
+                        <div class="card-body px-4 py-3">
+                            <h5 class="mb-3 card-title text-dark">Futurik Technology</h5>
+                            <b class="subtitle">2 - 12, January 2023</b>
+                            <P class="subtitle">Web Development & Server Hosting</P>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-dark py-5">
+        <div class="container text-center">
+            <h2 class="text-light mb-5 font-weight-normal">View certificates</h2>
+            <div class="cyber-button1">
+                <a href="https://drive.google.com/drive/folders/15yCNEWs6293ugQUl8ALIOhUw4ix2VGF3?usp=sharing">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Certificates
+                </a>
+              </div>
+        </div>
+    </section>
+
+    <section class="section" id="blog">
+        <div class="container">
+            <h2 class="mb-5">Project <span class="text-danger">Work</span></h2>
+            <div class="row">
+                <!-- blog-card -->
+                <div class="blog-card">
+                    <div class="img-holder">
+                        <img src="imgs/gettyimages-1389397859-612x612.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+                    </div>
+                    <div class="content-holder">
+                        <h6 class="title">Enhanced Attack Detection in Cognitive Radio Using Leaky Integrated Bidirectional Echo State Networks</h6>
+                        <p><b>MATLAB & Python code - Deep Learning Technique</b></p>
+                        <p></p>
+                        <div class="liquid-btn-container">
+                            <button class="liquid-btn" onclick="openPopup1()">
+                              <span>Show More</span>
+                            </button>
+                          </div>                          
+                    </div>
+                </div><!-- end of blog wrapper -->
+
+                <div id="popup1" class="popup-overlay">
+                    <div class="popup-content">
+                      <span class="close-btn" onclick="closePopup1()">&times;</span>
+                      <h2>Enhanced Attack Detection in Cognitive Radio Using Leaky Integrated Bidirectional Echo State Networks</h2>
+                      <div style="display: flex; justify-content: space-between;">
+                        <p><b>MATLAB & Python code - Deep Learning Technique</b></p>
+                        <p><b>Duration: Nov 2024 - March 2025</b></p>
+                      </div>
+                      <p>
+                        With the rise of wireless communication, dynamic spectrum management is vital—especially in Cognitive Radio Networks (CRNs), which boost spectral efficiency but are vulnerable to attacks like jamming, Primary User Emulation (PUEA), and Spectrum Sensing Data Falsification (SSDF). This paper proposes a novel deep learning model, the Leaky Integrated Bidirectional Echo State Network (LIBESN), for detecting such threats. By incorporating bidirectional data flow and leaky integration into traditional Echo State Networks, LIBESN improves temporal pattern recognition and long-range dependency learning. It also reduces training time with fixed reservoir weights while maintaining high accuracy. Tested on a custom CRN dataset, LIBESN achieved 94.67% accuracy, outperforming existing models. Its performance in ROC and precision–recall evaluations confirms its robustness, efficiency, and scalability for real-time CRN security.
+                      </p>
+                      <a href="https://github.com/RahulkannaR/Attack-detection-in-CRN" class="github-btn" target="_blank">🔗 View on GitHub</a>
+                    </div>
+                  </div>                
+                
+                <!-- blog-card -->
+                <div class="blog-card">
+                    <div class="img-holder">
+                        <img src="imgs/ransomeware.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+                    </div>
+                    <div class="content-holder">
+                        <h6 class="title">Ransomware Attack Detection</h6>
+                        <p><b>Python code - Machine Learning Technique</b></p>
+                        <p>Cognitive Radio Networks (CRNs) enhance spectral efficiency but face threats like jamming, PUEA, and SSDF. This paper introduces LIBESN—a lightweight deep learning model combining bidirectional flow and leaky integration in Echo State Networks. LIBESN improves temporal learning, reduces training time, and achieves 94.67% accuracy on a custom CRN dataset, outperforming existing models. Results confirm its robustness and scalability for real-time CRN attack detection.</p>
+                        <div class="liquid-btn-container">
+                            <button class="liquid-btn" onclick="openPopup2()">
+                              <span>Show More</span>
+                            </button>
+                          </div>                          
+                    </div>
+                </div><!-- end of blog wrapper -->
+
+                <!-- Popup Modal -->
+                <div id="popup2" class="popup-overlay">
+                    <div class="popup-content">
+                        <span class="close-btn" onclick="closePopup2()">&times;</span>
+                        <h2>Ransomware Attack Detection</h2>
+                        <div style="display: flex; justify-content: space-between;">
+                            <p><b>Sub Heading</b></p>
+                            <p><b>Duration: Sep 2024 - Dec 2024</b></p>
+                        </div>
+                        <p>
+                            With the rise of wireless communication, dynamic spectrum management has become crucial—especially in Cognitive Radio Networks (CRNs), which improve spectral efficiency. However, their open and adaptive nature makes them vulnerable to attacks such as jamming, Primary User Emulation Attacks (PUEA), and Spectrum Sensing Data Falsification (SSDF). This paper introduces a novel deep learning model, the Leaky Integrated Bidirectional Echo State Network (LIBESN), for effective attack detection in CRNs. LIBESN enhances traditional Echo State Networks by integrating bidirectional data flow and leaky integration, enabling better temporal pattern recognition and long-range dependency learning. Unlike conventional recurrent networks, LIBESN uses fixed reservoir weights, reducing training time while maintaining high accuracy. Experiments on a custom CRN dataset show that LIBESN achieves 94.67% accuracy, 93.33% precision, 95.89% recall, and a 94.59% F1-score—surpassing existing models. ROC and precision–recall analyses further validate its reliability under real- time and imbalanced conditions. LIBESN proves to be a robust, lightweight, and scalable solution for real-time CRN attack detection, paving the way for intelligent security in spectrum- aware systems.
+                        </p>
+                        <a href="https://github.com/RahulkannaR/Ransomware-attack.git" class="github-btn" target="_blank">🔗 View on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- blog-card -->
+                <div class="blog-card">
+                    <div class="img-holder">
+                        <img src="imgs/air quality analysis.webp" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+                    </div>
+                    <div class="content-holder">
+                        <h6 class="title">Prediction & Analysis of Air Quality using ANN & CNN</h6>
+                        <p><b>Python code - Integrated Machine Learning Technique</b></p>
+                        <p>Developed air quality prediction models using Artificial Neural Networks (ANN) and Convolutional Neural Networks (CNN) in PyCharm. Analyzed air quality data to identify patterns and predict future air quality index (AQI) for informed decision-making. This project contributes to environmental monitoring and public health initiatives.</p>
+                        <div class="liquid-btn-container">
+                            <button class="liquid-btn" onclick="openPopup3()">
+                              <span>Show More</span>
+                            </button>
+                          </div>                          
+                    </div>
+                </div><!-- end of blog wrapper -->
+                
+                <div id="popup3" class="popup-overlay">
+                    <div class="popup-content">
+                      <span class="close-btn" onclick="closePopup3()">&times;</span>
+                      <h2>Prediction & Analysis of Air Quality using ANN & CNN</h2>
+                      <div style="display: flex; justify-content: space-between;">
+                        <p><b>Python code - Integrated Machine Learning Technique</b></p>
+                        <p><b>Duration: Jan 2024 - May 2024</b></p>
+                      </div>
+                      <p>
+                        Air quality is a major environmental and health concern, especially in developing countries like India. Tamil Nadu, a state in southern India, faces severe air pollution problems due to various sources such as vehicular emissions, industrial activities, biomass burning, and dust storms. To monitor and forecast air quality, conventional methods such as ground-based stations and satellite observations have limitations in terms of spatial and temporal coverage, cost, and maintenance. Therefore, there is a need for alternative methods that can leverage the advances in machine learning and big data analytics to provide high-resolution and real-time air quality information. In this paper, we propose a novel approach for air quality analysis and prediction in Tamil Nadu using artificial neural networks (ANNs) and convolutional neural networks (CNNs). These are powerful machine learning techniques that can learn complex nonlinear relationships from large and diverse datasets, and can handle missing and noisy data. We use historical data of air pollutant concentrations, meteorological variables, and land use features from various sources to train and test our models. We compare the performance of our models with existing methods and evaluate their robustness and generalizability. We also provide insights into the spatiotemporal patterns and trends of air quality in Tamil Nadu, and identify the key factors and drivers of air pollution. Our approach can be useful for policy makers, researchers, and citizens to understand and improve the air quality situation in Tamil Nadu and other regions with similar characteristics.
+                      </p>
+                      <a href="https://github.com/RahulkannaR/Airquality_rahul" class="github-btn" target="_blank">🔗 View on GitHub</a>
+                    </div>
+                  </div>
+                
+                <!-- blog-card -->
+                <div class="blog-card">
+                    <div class="img-holder">
+                        <img src="imgs/Smoke-Detector-with-Arduino-MQ2-Sensor-1.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+                    </div>
+                    <div class="content-holder">
+                        <h4 class="title">Smoke Detector</h4>
+                        <p><b>using Arduino IDE</b></p>
+                        <p>Designed and built a smoke detector using Arduino. Project utilized an MQsensor to detect smoke presence, triggering an alarm (LED and buzzer) when smoke levels exceeded a safe threshold.</p>
+                        <div class="liquid-btn-container">
+                            <button class="liquid-btn" onclick="openPopup4()">
+                              <span>Show More</span>
+                            </button>
+                          </div>                          
+                    </div>
+                </div><!-- end of blog wrapper -->
+                <div id="popup4" class="popup-overlay">
+                    <div class="popup-content">
+                      <span class="close-btn" onclick="closePopup4()">&times;</span>
+                      <h2>Smoke Detector</h2>
+                      <div style="display: flex; justify-content: space-between;">
+                        <p><b>using Arduino IDE</b></p>
+                        <p><b>Nov 2023</b></p>
+                      </div>
+                      <p>
+In this project, I designed and built a smoke detection system using an Arduino microcontroller to provide a low-cost, real-time fire safety solution. The core of the system is the MQ-series gas sensor (specifically the MQ-2 or MQ-135), which is capable of detecting smoke, as well as gases like methane, carbon monoxide, and LPG. The sensor continuously monitors the air quality and outputs an analog signal proportional to the concentration of smoke particles in the air. The Arduino reads the sensor's analog output and compares it to a predefined safety threshold. If the smoke level exceeds this threshold, the system is programmed to trigger both visual and audible alerts—a red LED flashes, and a buzzer sounds continuously—to warn occupants of potential fire hazards. To enhance usability and testing, the project also included:
+ - Calibration logic to adjust sensitivity based on environmental conditions.
+ - Real-time monitoring through the Arduino Serial Monitor for debugging and data observation.
+ - Modular design that allows for easy integration with IoT systems or home automation platforms in the future.
+This project demonstrates practical skills in embedded systems, sensor interfacing, real-time data processing, and basic safety system design. It highlights how simple hardware components can be combined to build functional prototypes with real-world applications.
+                      </p>
+                      <a href="https://github.com/RahulkannaR/Smoke-detector" class="github-btn" target="_blank">🔗 View on GitHub</a>
+                    </div>
+                  </div>                
+
+                <!-- blog-card -->
+                <div class="blog-card">
+                    <div class="img-holder">
+                        <img src="imgs/images.jpeg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+                    </div>
+                    <div class="content-holder">
+                        <h4 class="title">Ping Pong Game</h4>
+                        <p><b>using Arduino IDE</b></p>
+                        <p>Developed a single player Ping Pong game using Arduino Uno and a 0.96” OLED display with SSD1306 interface. This project utilized I2C communication for efficient data transfer between the microcontroller and the display</p>
+                        <div class="liquid-btn-container">
+                            <button class="liquid-btn" onclick="openPopup5()">
+                              <span>Show More</span>
+                            </button>
+                          </div>                          
+                    </div>
+                </div><!-- end of blog wrapper -->
+                <div id="popup5" class="popup-overlay">
+                    <div class="popup-content">
+                      <span class="close-btn" onclick="closePopup5()">&times;</span>
+                      <h2>Ping Pong Game</h2>
+                      <div style="display: flex; justify-content: space-between;">
+                        <p><b>using Arduino IDE</b></p>
+                        <p><b>Duration: Feb 2023</b></p>
+                      </div>
+                      <p>
+                        Single-Player Ping Pong Game Using Arduino Uno and OLED Display
+
+This project involved developing a single-player Ping Pong game using an Arduino Uno and a 0.96” OLED display based on the SSD1306 driver, creating an engaging and interactive mini-game using minimal hardware. The game interface is rendered on the OLED screen, which communicates with the Arduino via the I2C protocol. I2C (Inter-Integrated Circuit) is a two-wire serial communication method that enables efficient and fast data transfer between the microcontroller and peripheral devices like the OLED, ensuring smooth graphics updates without lag. Key features and technical details:
+ - Game Mechanics: The player controls a paddle located at the left edge of the screen, moving it vertically to hit a bouncing ball. The ball rebounds off the paddle and screen edges, simulating basic physics. If the player misses the ball, the game resets or deducts a life point.
+ - Input Control: A potentiometer or push-button setup was used to control the paddle's movement, providing intuitive and responsive interaction.
+ - Graphics Rendering: The SSD1306 OLED library was used to draw game elements like the paddle, ball, and boundary lines. Despite the limited resolution (128x64 pixels), the graphics are sharp and functional due to the monochrome display and optimized rendering functions.
+ - Game Loop: The core game logic was written in Arduino C/C++, including collision detection, ball velocity control, paddle movement, and scorekeeping. The update loop maintains consistent frame rates for a smooth user experience.
+ - Power Efficiency: The OLED display and I2C communication are low-power, making this project suitable for battery-operated or portable builds.
+This project demonstrates fundamental concepts in embedded programming, game logic development, display interfacing, and real-time user interaction. It reflects how even simple components can be creatively combined to produce interactive and entertaining applications.
+                      </p>
+                      <a href="https://github.com/RahulkannaR/Ping-Pong-Game" class="github-btn" target="_blank">🔗 View on GitHub</a>
+                    </div>
+                  </div>
+                
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section contact" id="contact">
+        <img src="imgs/hdimages.jpg" alt="" class="map" id="map" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="contact-form-card">
+                        <h4 class="contact-title">Send a message</h4>
+                        <form id="contactForm">
+                          <div class="form-group">
+                            <input id="name" class="form-control" type="text" placeholder="Name *" required>
+                          </div>
+                          <div class="form-group">
+                            <input id="mail" class="form-control" type="email" placeholder="Email *" required>
+                          </div>
+                          <div class="form-group">
+                            <textarea id="message" class="form-control" placeholder="Message *" name="message" rows="7" required></textarea>
+                          </div>
+                          <div class="form-group">
+                            <button type="submit" class="liquid1-btn">Send Message</button>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info-card">
+                        <h4 class="contact-title">Get in touch</h4>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-1 mr-1">
+                                <i class="ti-mobile icon-md"></i>
+                            </div>
+                            <div class="col-10 ">
+                                <h6 class="d-inline">Phone : <br> <span class="text-muted">+ (91) 9345814480</span></h6>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-1 mr-1">
+                                <i class="ti-map-alt icon-md"></i>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="d-inline">Address :<br> <span class="text-muted">Bs1 Arun B Block, Vindhiyachal Aprtment, Chandragandhi Nagar, Ponmeni, Bypass Road, Madurai - 16.</span></h6>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-1 pt-1 mr-1">
+                                <i class="fas fa-envelope icon"></i>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="d-inline">Email :<br> <span class="text-muted">Rahulkanna@vcet.gmail.com</span></h6>
+                            </div>
+                        </div>
+                        <div class="social-container">
+                            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+                            <ul>
+                              <li><a href="https://www.linkedin.com/in/rahul-rajesh-kanna-843b0722b/?originalSubdomain=in" target="_blank" class="confirm-link"><i class="fab fa-linkedin-in icon"></i></a></li>
+                              <li><a href="https://www.instagram.com/_r_rahul_1754_/#" target="_blank" class="confirm-link"><i class="fab fa-instagram icon"></i></a></li>
+                              <li><a href="#" onclick="showPopup('whatsapp')"><i class="fab fa-whatsapp icon"></i></a></li>
+                              <li><a href="#" onclick="showPopup('phone')"><i class="fas fa-phone icon"></i></a></li>
+                              <li><a href="#" onclick="showPopup('mail')"><i class="fas fa-envelope icon"></i></a></li>
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="footer py-3">
+        <div class="container">
+            <p class="small mb-0 text-light">
+                &copy; <script>document.write(new Date().getFullYear())</script> Created With <i class="ti-heart text-danger"></i> By <a href="#" target="_blank"><span class="text-danger" title="Bootstrap 4 Themes and Dashboards">Rahul</span></a> 
+            </p>
+        </div>
+    </footer>
+
+	<!-- core  -->
+    <script src="vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <script src="vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Isotope  -->
+    <script src="vendors/isotope/isotope.pkgd.js"></script>
+
+    <!-- portfolio js -->
+    <script src="portfolio_latest_js.js"></script>
+</body>
+</html>
